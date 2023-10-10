@@ -55,10 +55,9 @@ public class Studente {
         String[] cog = cognome.split(" ");
 
         for (int i = 0; i < cog.length; i++) {
-            if(cog[i].matches("[A-Z][a-z]*")){
+            if(cog[i].matches("[A-Za-z]*")){
                 cog[i] = cog[i].toLowerCase();
                 this.cognome += cog[i].substring(0,1).toUpperCase() + cog[i].substring(1) + " ";
-                System.out.println(cog[i]);
             }else{
                 throw new Exception("Cognome errato!");
             }

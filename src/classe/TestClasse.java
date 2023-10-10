@@ -6,7 +6,7 @@ public class TestClasse {
         Studente s1 = null;
 
         try{
-            s1 = new Studente("Gino","NeGrO SwArZ");
+            s1 = new Studente("GiNo","RoSsI aArTiNi");
         }catch(ArithmeticException e){
             System.out.println("Errore: " + e.getMessage());
         }catch(Exception e){
