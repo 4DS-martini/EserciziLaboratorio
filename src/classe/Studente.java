@@ -32,11 +32,19 @@ public class Studente {
     }
 
     public void setNome(String nome) throws Exception{
-        this.nome = "";
         //char[] nomeArray = nome.toCharArray();
         if(nome == null){
-            throw new Exception("Stringa vuota!");
+            throw new NullPointerException("Stringa vuota!");
         }
+        if(nome.contains(" ")){
+            throw new Exception("Spazi Proibiti!");
+        }
+        if(nome.length() <= 3){
+            throw new Exception("Troppo corto!");
+        }
+
+        this.nome = "";
+
         if(nome.matches("[a-zA-Z]*")){
             this.nome = nome.toLowerCase();
             this.nome = this.nome.substring(0,1).toUpperCase() + this.nome.substring(1);
@@ -46,21 +54,34 @@ public class Studente {
     }
 
     public void setCognome(String cognome) throws Exception{
-        this.cognome = "";
-
         if(cognome == null){
+            throw new NullPointerException("Stringa vuota!");
+        }
+        if(cognome.equals(" ")){
             throw new Exception("Stringa vuota!");
         }
+        if(cognome.length() <= 3){
+            throw new Exception("Stringa troppo corta!");
+        }
 
-        String[] cog = cognome.split(" ");
-
-        for (int i = 0; i < cog.length; i++) {
-            if(cog[i].matches("[A-Za-z]*")){
-                cog[i] = cog[i].toLowerCase();
-                this.cognome += cog[i].substring(0,1).toUpperCase() + cog[i].substring(1) + " ";
-            }else{
-                throw new Exception("Cognome errato!");
+        this.cognome = "";
+        try {
+            String[] cog = cognome.split(" ");
+            if (cog.length == 0) {
+                throw new Exception("Stringa vuota!");
             }
+            for (int i = 0; i < cog.length; i++) {
+                if (cog[i].matches("[A-Z a-z]*")) { //espressioni regolari
+                    cog[i] = cog[i].toLowerCase();
+                    this.cognome += cog[i].substring(0, 1).toUpperCase() + cog[i].substring(1) + " ";
+                } else {
+                    throw new Exception("Cognome errato!");
+                }
+            }
+        }catch (IndexOutOfBoundsException e){
+            throw new IndexOutOfBoundsException("Stringa errata!");
+        }catch (Exception e){
+            throw new Exception(" " + e.getMessage());
         }
 
     }
