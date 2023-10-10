@@ -8,16 +8,14 @@ public class TestClasse {
         //Scanner input = new Scanner(System.in);
 
         try{
-            s1 = new Studente("GiNo", "MaRtInI rOsSi");
+            s1 = new Studente("GiNo", "mArTiNI rOSsI");
             System.out.println(s1.toString());
         }catch(ArithmeticException e){
             System.out.println("Errore 1: " + e.getMessage());
         }catch(NullPointerException e) {
             System.out.println("Errore 2: " + e.getMessage());
-        }catch(IndexOutOfBoundsException e){
-            System.out.println("Errore 3: " + e.getMessage());
         }catch(Exception e){
-            System.out.println("Errore 4:" + e.getMessage());
+            System.out.println("Errore 3: " + e.getMessage());
         }
     }
 }
