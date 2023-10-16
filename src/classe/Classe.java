@@ -6,14 +6,11 @@ public class Classe {
     private Studente[] studenti;
     private Studente capoClasse;
     private int dimLog;
+    private final int maxStudenti = 24;
 
-    public Classe(Studente capoClasse, Studente[] studenti)throws Exception{
-        this.capoClasse = capoClasse;
-        this.studenti = new Studente[studenti.length];
-        setStudenti(studenti);
-        this.dimLog = 0;
+    public Classe(){
+        dimLog = 0;
     }
-
 
     public Studente[] getStudenti() {
         return studenti;
@@ -23,12 +20,24 @@ public class Classe {
         return capoClasse;
     }
 
-    public void setStudenti(Studente[] studenti) throws Exception{
-        this.studenti[dimLog] = new Studente(studenti[dimLog].getNome(), studenti[dimLog].getCognome());
+    public void aggiungi(String nome, String cognome) throws Exception{
+        if(dimLog <= maxStudenti){
+            studenti[dimLog] = new Studente(nome, cognome);
+            dimLog++;
+        }
+        throw new Exception("Classe piena!");
     }
 
-    public void setCapoClasse(Studente capoClasse) {
-        this.capoClasse = capoClasse;
+    public void nominaCapoClasse(String nome, String cognome) {
+        int i = 0;
+        boolean flag = true;
+        while (i < dimLog && flag) {
+            if(nome.equals(studenti[i].getNome()) && cognome.equals(studenti[i].getCognome())){
+                flag = false;
+            }
+            i++;
+        }
+        capoClasse = studenti[i-1];
     }
 
     public void invertiAttributi() throws Exception{
