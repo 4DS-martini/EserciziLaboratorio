@@ -4,7 +4,7 @@ public class PoligonoRegolare {
     private int nLati;
     private float lLati;
     public PoligonoRegolare(int nLati, float lLati) throws Exception{
-        if(nLati < 1){
+        if(nLati <= 3){
             throw new Exception("Numero Lati errati!");
         }
         if(lLati <= 0){

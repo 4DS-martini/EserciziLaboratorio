@@ -5,6 +5,9 @@ public class Rombo extends PoligonoRegolare{
     private float dMag;
     public Rombo(float lLati, float dMag, float dMin)throws Exception{
         super(4,lLati);
+        if(dMag <= 0 || dMin <= 0){
+            throw new Exception("Diagonali errate!");
+        }
         this.dMag = dMag;
         this.dMin = dMin;
     }
