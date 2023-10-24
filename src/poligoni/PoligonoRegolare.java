@@ -16,14 +16,8 @@ public class PoligonoRegolare {
     public int getNLati(){
         return nLati;
     }
-    public void setNLati(int nLati){
-        this.nLati = nLati;
-    }
     public float getLLati(){
         return lLati;
-    }
-    public void setLLati(float lLati){
-        this.lLati = lLati;
     }
 
     public float perimetro(){
