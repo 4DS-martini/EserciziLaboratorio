@@ -1,11 +1,8 @@
 package poligoni;
 
-import com.sun.xml.internal.fastinfoset.algorithm.IEEE754FloatingPointEncodingAlgorithm;
-
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class TestPoligoni {
+public class TestPoligoniGestore {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         GestionePoligoni g1 = null;
@@ -16,7 +13,7 @@ public class TestPoligoni {
         float dMag;
         float dMIn;
         boolean flag = false;
-/*
+
         do {
             System.out.println("Quanti Poligoni vuoi inserire? ");
             lun = input.nextInt();
@@ -27,59 +24,60 @@ public class TestPoligoni {
                 System.out.println("Errore: " + e.getMessage());
             }
         }while(!flag);
- */
+
         Quadrato q1 = null;
         Rombo r1 = null;
         Esagono e1 = null;
         Pentagono p1 = null;
-/*
-        try {
-            PoligonoRegolare pr1;
 
-            penta1 = new Pentagono(20);
-
-            //System.out.println("Area Poligono regolare " + pr1.area());
-            System.out.println("Area Pentagono " + penta1.area());
-
-            //System.out.println("Perimetro Poligono regolare " + pr1.perimetro());
-            System.out.println("Perimetro Pentagono " + penta1.perimetro());
-
-            //System.out.println("Poligono regolare " + pr1.toString());
-            System.out.println("Pentagono " + penta1.toString());
-
-            //penta1 = pr1; //Non puoi
-            pr1 = penta1;
-
-            System.out.println("Area Poligono regolare " + pr1.area());
-            System.out.println("Poligono regolare " + pr1.toString());
-
-            //System.out.println("Apotema Poligono regolare " + pr1.apotema()); //Non puoi
-
-
-        }catch (Exception e){
-            System.out.println("Errore");
-        }
-
- */
         do {
             try {
-                System.out.println("\n1) Quadrato \n2) Rombo \n3) Esagono \n4) Pentagono \n0)Esci");
+                System.out.println("\n1) Inserisci \n2) Elimina \n3) Visulizza \n4) Lato più lungo  \n0)Esci");
                 System.out.println("--> ");
                 scelta = input.nextInt();
                 switch (scelta) {
                     case 0: //Esci
                         System.out.println("Arrivederci!");
                         break;
-                    case 1: //Quadrato
-                        System.out.println("Lunghezza lati: ");
-                        lL = input.nextFloat();
+                    case 1:
+                        int s = -1;
+                        System.out.println("\n1) Quadrato \n2) Rombo \n3) Esagono \n4) Pentagono \n0)Esci");
+                        System.out.println("--> ");
+                        s = input.nextInt();
+                        switch (s) {
+                            case 0: //Esci
+                                System.out.println("Uscito dall'inserimento!");
+                                break;
+                            case 1: //Quadrato
+                                System.out.println("Lunghezza lati: ");
+                                lL = input.nextFloat();
+                                g1.inserisciPoligono(new Quadrato(lL));
+                                break;
+                            case 2: //Rombo
+                                System.out.println("Lunghezza lati: ");
+                                lL = input.nextFloat();
+                                System.out.println("Lunghezza diagonale maggiore: ");
+                                dMag = input.nextFloat();
+                                System.out.println("Lunghezza diagonale minore: ");
+                                dMIn = input.nextFloat();
+                                g1.inserisciPoligono(new Rombo(lL, dMag, dMIn));
+                                break;
+                            case 3: // Esagono
+                                System.out.println("Lunghezza lati: ");
+                                lL = input.nextInt();
+                                g1.inserisciPoligono(new Esagono(lL));
+                                break;
+                            case 4: //Pentagono
+                                System.out.println("Lunghezza lati: ");
+                                lL = input.nextInt();
+                                g1.inserisciPoligono(new Pentagono(lL));
+                                break;
+                            default:
+                                System.out.println("Scelta errata!");
 
-                        q1 = new Quadrato(lL);
-
-                        System.out.println(q1.toString() + "\nArea: " + q1.area() + "\nPerimetro: " + q1.perimetro());
-                        System.out.println(q1.disegna('x'));
+                        }
                         break;
-                    case 2: //Rombo
+                    case 2:
                         System.out.println("Lunghezza lati: ");
                         lL = input.nextFloat();
                         System.out.println("Lunghezza diagonale maggiore: ");

@@ -16,10 +16,27 @@ public class Rombo extends PoligonoRegolare{
         this.dMag = r.dMag;
         this.dMin = r.dMin;
     }
-    public float area(){
+    public double area(){
         return (dMin*dMag)/2;
     }
-    public float apotema(){
+    public String disegna(char carattere){
+        String stampa = "";
+        for (int i = 0; i < dMin; i++) {
+            for (int j = 0; j < dMag; j++) {
+                if (i + j == (int)dMag/2 || i - j == (int)dMag/2 || j - i == (int)dMag/2 ||
+
+                        i + j == dMag + (int)(dMag/3)) {
+
+                    stampa += carattere;
+                } else {
+                    stampa += " ";
+                }
+            }
+            stampa += "\n";
+        }
+        return stampa;
+    }
+    public double apotema(){
         return (area()*2)/super.perimetro();
     }
     public float getDMin(){

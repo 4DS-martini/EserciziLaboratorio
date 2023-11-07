@@ -1,6 +1,6 @@
 package poligoni;
 
-public class PoligonoRegolare {
+public abstract class PoligonoRegolare {
     private int nLati;
     private float lLati;
     public PoligonoRegolare(int nLati, float lLati) throws Exception{
@@ -19,10 +19,10 @@ public class PoligonoRegolare {
     public float getLLati(){
         return lLati;
     }
+    public float perimetro(){return nLati * lLati;}
+    public abstract double area();
 
-    public float perimetro(){
-        return nLati * lLati;
-    }
+    public abstract String disegna(char x);
 
     public String toString(){
         return "Numero lati: " + nLati + " lunghi: " + lLati;

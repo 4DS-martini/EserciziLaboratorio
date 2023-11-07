@@ -8,12 +8,20 @@ public class Pentagono extends PoligonoRegolare{
         super(5, p.getLLati());
     }
     public double area(){
-        return Math.pow(super.getLLati(), 2) * 1.72;
+        return Math.pow(getLLati(), 2) * 1.72;
+    }
+    public String disegna(char x){
+        String str = "";
+        return str;
     }
     public double diagonale(){
-        return (super.getLLati()*(Math.sqrt(5) - 1))/2;
+        return (getLLati()*(Math.sqrt(5) - 1))/2;
     }
     public double apotema(){
-        return super.getLLati() * 0.688;
+        return getLLati() * 0.688;
+    }
+
+    public String toString() {
+        return "Pentagono{" + getLLati() + "}";
     }
 }

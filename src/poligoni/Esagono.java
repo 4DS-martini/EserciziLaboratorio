@@ -13,6 +13,10 @@ public class Esagono extends PoligonoRegolare{
     public double area(){
         return(super.perimetro()*apotema())/2;
     }
+    public String disegna(char x){
+        String str = "";
+        return str;
+    }
     public double apotema(){
         return 0.86*super.getLLati();
     }
