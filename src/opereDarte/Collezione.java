@@ -21,6 +21,7 @@ public class Collezione {
         this.luogo = luogo;
     }
 
+    /*
     public void inserisciScultura(Scultura s1)throws Exception{
         if(s1 == null){
             throw new Exception("Opera nulla!");
@@ -36,12 +37,47 @@ public class Collezione {
         collection[dimLog] = new Quadro(q1);
         dimLog++;
     }
+     */
 
-    public String occupazione(OperaDarte od1){
-        return "Occupato: " + od1.printIngombro();
+    /*
+    public void inserisci(OperaDarte od1)throws Exception { //aggregazione lasca
+        if(od1 == null){
+            throw new Exception("Opera nulla!");
+        }
+        collection[dimLog] = od1;
+        dimLog++;
+    }
+     */
+
+    public void inserisci(OperaDarte od1)throws Exception { //aggregazione stretta
+        if(od1 == null){
+            throw new Exception("Opera nulla!");
+        }
+        if(od1 instanceof Quadro){ //se od1
+            collection[dimLog] = new Quadro((Quadro) od1);
+        }
+        else{
+            collection[dimLog] = new Scultura((Scultura) od1);
+        }
+        collection[dimLog] = od1;
+        dimLog++;
     }
 
-    public String toString(){
+
+    public double occupazione(OperaDarte od1) throws Exception{
+        if(od1 == null){
+            throw new Exception("OperaDarte nulla!");
+        }
+
+        for (int i = 0; i < dimLog; i++) {
+            if(collection[i].equals(od1)){
+                return collection[i].printIngombro();
+            }
+        }
+        throw new Exception("Non trovato!");
+    }
+
+    public String stampaCollezione(){
         String s = "";
         for (int i = 0; i < dimLog; i++) {
             s += collection[i].toString();

@@ -16,14 +16,14 @@ public class Quadro extends OperaDarte{
         setLarghezza(s.getLarghezza());
     }
 
-    public void setLarghezza(float larghezza) throws Exception{
+    private void setLarghezza(float larghezza) throws Exception{
         if(larghezza <= 0){
             throw new Exception("Valore non valido!");
         }
         this.larghezza = larghezza;
     }
 
-    public void setAltezza(float altezza) throws Exception{
+    private void setAltezza(float altezza) throws Exception{
         if(larghezza <= 0){
             throw new Exception("Valore non valido!");
         }
@@ -43,6 +43,7 @@ public class Quadro extends OperaDarte{
     }
 
     public String toString(){
-        return "Titolo: " + titolo + "\nArtista: " + artista + "Larghezza: " + larghezza + "Altezza: " + altezza;
+        //return "Titolo: " + titolo + "\nArtista: " + artista + "Larghezza: " + larghezza + "Altezza: " + altezza;
+        return super.toString() + "\nLarghezza: " + larghezza + "Altezza: " + altezza;
     }
 }

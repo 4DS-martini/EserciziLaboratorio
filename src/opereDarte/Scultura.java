@@ -3,7 +3,7 @@ package opereDarte;
 public class Scultura extends OperaDarte{
     private float larghezza;
     private float altezza;
-    private float profonfita;
+    private float profondita;
 
     public Scultura(String t, String a,float l, float al, float p)throws Exception{
         super(t, a);
@@ -37,7 +37,7 @@ public class Scultura extends OperaDarte{
         if(larghezza <= 0){
             throw new Exception("Valore non valido!");
         }
-        this.profonfita = profonfita;
+        this.profondita = profonfita;
     }
 
     public float getLarghezza() {
@@ -49,14 +49,15 @@ public class Scultura extends OperaDarte{
     }
 
     public float getProfonfita() {
-        return profonfita;
+        return profondita;
     }
 
     public double printIngombro(){
-        return larghezza*altezza*profonfita;
+        return larghezza*altezza*profondita;
     }
 
     public String toString(){
-        return "Titolo: " + titolo + "\nArtista: " + artista + "Larghezza: " + larghezza + "Altezza: " + altezza + "Profondità :" + profonfita;
+        //return "Titolo: " + titolo + "\nArtista: " + artista + "Larghezza: " + larghezza + "Altezza: " + altezza + "Profondità :" + profondita;
+        return super.toString() + "\nLarghezza: " + larghezza + "Altezza: " + altezza + "Profondità :" + profondita;
     }
 }

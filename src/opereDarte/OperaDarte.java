@@ -14,11 +14,12 @@ public abstract class OperaDarte {
         setArtista(od1.getArtista());
     }
 
-    public void setTitolo(String titolo) {
+
+    private void setTitolo(String titolo) {
         this.titolo = titolo;
     }
 
-    public void setArtista(String artista) {
+    private void setArtista(String artista) {
         this.artista = artista;
     }
 
@@ -30,5 +31,18 @@ public abstract class OperaDarte {
         return artista;
     }
 
+    public boolean equals(OperaDarte op){
+        if(titolo.equals(op.titolo) && artista.equals(op.artista) && printIngombro() == op.printIngombro()){
+            return true;
+        }
+        return false;
+    }
+
+
     public abstract double printIngombro();
+
+
+    public String toString() {
+        return "Titolo: " + titolo + "\nArtista: " + artista;
+    }
 }
