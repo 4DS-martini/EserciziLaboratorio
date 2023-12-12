@@ -45,40 +45,4 @@ public class Rombo extends PoligonoRegolare {
     public float getDMag(){
         return dMag;
     }
-
-    @Override
-    public Boolean confrontaMaggiore(Object obj) throws Exception {
-        if(!(obj instanceof Rombo)){
-            throw new Exception("Oggetto non appartenente alla classe Rombo!");
-        }
-        if(((Rombo) obj).area() > area()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    @Override
-    public Boolean confrontaMinore(Object obj) throws Exception {
-        if(!(obj instanceof Rombo)){
-            throw new Exception("Oggetto non appartenente alla classe Rombo!");
-        }
-        if(((Rombo) obj).area() < area()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    @Override
-    public Boolean confrontaUguale(Object obj) throws Exception {
-        if(!(obj instanceof Rombo)){
-            throw new Exception("Oggetto non appartenente alla classe Rombo!");
-        }
-        if(((Rombo) obj).area() == area()){
-            return true;
-        }else{
-            return false;
-        }
-    }
 }

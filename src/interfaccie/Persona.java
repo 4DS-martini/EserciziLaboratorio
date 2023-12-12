@@ -1,6 +1,6 @@
 package interfaccie;
 
-public class Persona {
+public class Persona implements Confrontabile{
     private String nome;
     private float altezza;
 
@@ -25,5 +25,40 @@ public class Persona {
             throw new Exception("Valore errato!");
         }
         this.altezza = altezza;
+    }
+    @Override
+    public Boolean confrontaMaggiore(Confrontabile obj) throws Exception{
+        if(!(obj instanceof Persona)){
+            throw new Exception("Oggetto non appartenente alla classe Persona!");
+        }
+        if(((Persona) obj).getAltezza() > altezza){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public Boolean confrontaMinore(Confrontabile obj) throws Exception{
+        if(!(obj instanceof Persona)){
+            throw new Exception("Oggetto non appartenente alla classe Persona!");
+        }
+        if(((Persona) obj).getAltezza() < altezza){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public Boolean confrontaUguale(Confrontabile obj) throws Exception{
+        if(!(obj instanceof Persona)){
+            throw new Exception("Oggetto non appartenente alla classe Persona!");
+        }
+        if(((Persona) obj).getAltezza() == altezza){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

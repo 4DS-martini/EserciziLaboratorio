@@ -18,42 +18,6 @@ public class Esagono extends PoligonoRegolare {
         return str;
     }
 
-    public Boolean confrontaMaggiore(Object obj) throws Exception{
-        if(!(obj instanceof Esagono)){
-            throw new Exception("Oggetto non appartenente alla classe Esagono!");
-        }
-        if(((Esagono) obj).area() > area()){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    public Boolean confrontaMinore(Object obj) throws Exception{
-        if(!(obj instanceof Esagono)){
-            throw new Exception("Oggetto non appartenente alla classe Esagono!");
-        }
-        if(((Esagono) obj).area() < area()){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    public Boolean confrontaUguale(Object obj) throws Exception{
-        if(!(obj instanceof Esagono)){
-            throw new Exception("Oggetto non appartenente alla classe Esagono!");
-        }
-        if(((Esagono) obj).area() == area()){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     public double apotema(){
         return 0.86*super.getLLati();
     }

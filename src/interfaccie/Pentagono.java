@@ -21,42 +21,6 @@ public class Pentagono extends PoligonoRegolare {
         return getLLati() * 0.688;
     }
 
-    @Override
-    public Boolean confrontaMaggiore(Object obj) throws Exception {
-        if(!(obj instanceof Pentagono)){
-            throw new Exception("Oggetto non appartenente alla classe Pentagono!");
-        }
-        if(((Pentagono) obj).area() > area()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    @Override
-    public Boolean confrontaMinore(Object obj) throws Exception {
-        if(!(obj instanceof Pentagono)){
-            throw new Exception("Oggetto non appartenente alla classe Pentagono!");
-        }
-        if(((Pentagono) obj).area() < area()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    @Override
-    public Boolean confrontaUguale(Object obj) throws Exception {
-        if(!(obj instanceof Pentagono)){
-            throw new Exception("Oggetto non appartenente alla classe Pentagono!");
-        }
-        if(((Pentagono) obj).area() == area()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     public String toString() {
         return "Pentagono{" + getLLati() + "}";
     }

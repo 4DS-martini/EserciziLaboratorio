@@ -4,12 +4,12 @@ public class Auto implements Confrontabile{
     private String modello;
     private Float velocita;
 
-    public Auto(Float peso, Float velocita)throws Exception{
-        setPeso(modello);
+    public Auto(String modello, Float velocita)throws Exception{
+        setModello(modello);
         setVelocita(velocita);
     }
 
-    public void setPeso(String modello){
+    public void setModello(String modello){
         this.modello = modello;
     }
 
@@ -29,7 +29,7 @@ public class Auto implements Confrontabile{
     }
 
     @Override
-    public Boolean confrontaMaggiore(Object obj) throws Exception{
+    public Boolean confrontaMaggiore(Confrontabile obj) throws Exception{
         if(!(obj instanceof Auto)){
             throw new Exception("Oggetto non appartenente alla classe Auto!");
         }
@@ -41,7 +41,7 @@ public class Auto implements Confrontabile{
     }
 
     @Override
-    public Boolean confrontaMinore(Object obj) throws Exception{
+    public Boolean confrontaMinore(Confrontabile obj) throws Exception{
         if(!(obj instanceof Auto)){
             throw new Exception("Oggetto non appartenente alla classe Auto!");
         }
@@ -53,7 +53,7 @@ public class Auto implements Confrontabile{
     }
 
     @Override
-    public Boolean confrontaUguale(Object obj) throws Exception{
+    public Boolean confrontaUguale(Confrontabile obj) throws Exception{
         if(!(obj instanceof Auto)){
             throw new Exception("Oggetto non appartenente alla classe Auto!");
         }

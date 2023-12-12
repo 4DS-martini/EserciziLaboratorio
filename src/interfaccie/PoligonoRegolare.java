@@ -26,9 +26,39 @@ public abstract class PoligonoRegolare implements Confrontabile {
     public abstract String disegna(char x);
 
 
-    public abstract Boolean confrontaMaggiore(Object obj)throws Exception;
-    public abstract Boolean confrontaMinore(Object obj)throws Exception;
-    public abstract Boolean confrontaUguale(Object obj)throws Exception;
+    public Boolean confrontaMaggiore(Confrontabile obj)throws Exception{
+        if(!(obj instanceof PoligonoRegolare)){
+            throw new Exception("Oggetto non appartenente alla classe PoligonoRegolare!");
+        }
+        if(((PoligonoRegolare) obj).area() > area()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public Boolean confrontaMinore(Confrontabile obj)throws Exception{
+        if(!(obj instanceof PoligonoRegolare)){
+            throw new Exception("Oggetto non appartenente alla classe PoligonoRegolare!");
+        }
+        if(((PoligonoRegolare) obj).area() < area()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public Boolean confrontaUguale(Confrontabile obj)throws Exception{
+        if(!(obj instanceof PoligonoRegolare)){
+            throw new Exception("Oggetto non appartenente alla classe PoligonoRegolare!");
+        }
+        if(((PoligonoRegolare) obj).area() == area()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
     public String toString(){
         return "Numero lati: " + nLati + " lunghi: " + lLati;

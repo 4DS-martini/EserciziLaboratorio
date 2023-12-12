@@ -32,42 +32,6 @@ public class Quadrato extends PoligonoRegolare {
 
     }
 
-    public Boolean confrontaMaggiore(Object obj) throws Exception{
-        if(!(obj instanceof Quadrato)){
-            throw new Exception("Oggetto non appartenente alla classe Quadrato!");
-        }
-        if(((Quadrato) obj).area() > area()){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    public Boolean confrontaMinore(Object obj) throws Exception{
-        if(!(obj instanceof Quadrato)){
-            throw new Exception("Oggetto non appartenente alla classe Quadrato!");
-        }
-        if(((Quadrato) obj).area() < area()){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    public Boolean confrontaUguale(Object obj) throws Exception{
-        if(!(obj instanceof Quadrato)){
-            throw new Exception("Oggetto non appartenente alla classe Quadrato!");
-        }
-        if(((Quadrato) obj).area() == area()){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     public double diagonale(){
         return Math.sqrt(getLLati());
     }
