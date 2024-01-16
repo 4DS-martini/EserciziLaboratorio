@@ -12,12 +12,13 @@ public abstract class DocumentoCommerciale {
         azienda = a;
         data = d;
         totale = 0;
+        listaProdotti=new ArrayList<>();
     }
 
     public void aggiungiProd(Prodotto prodotto, int numero) throws Exception {
         if(ricercaProdInAzienda(prodotto)){
             listaProdotti.add(prodotto);
-            totale += prodotto.getPrezzo() * (1 + prodotto.getIvaperc()) * numero;
+            totale += prodotto.getPrezzo() * numero;
         }
         else{
             throw new Exception("Prodotto non presente all'interno della dispensa!");
@@ -28,7 +29,7 @@ public abstract class DocumentoCommerciale {
         if(ricercaProdInAzienda(prodotto)){
             if(listaProdotti.contains(prodotto)){
                 listaProdotti.remove(prodotto);
-                totale -= prodotto.getPrezzo() * (1 + prodotto.getIvaperc());
+                totale -= prodotto.getPrezzo();
             }
             else{
                 throw new Exception("Prodotto non presente all'interno dello scontrino!");
@@ -57,9 +58,9 @@ public abstract class DocumentoCommerciale {
         s += "\nMail: " + azienda.getMail();
         s += "\nTelefono: " + azienda.getTelefono();
 
-        System.out.println("\nDettagli Spesa:");
+        s += "\nDettagli Spesa:";
         for (Prodotto prodotto : listaProdotti) {
-            s += "\n%-20s %10.2f EUR" + prodotto.getNome() + prodotto.getPrezzo() * (1 + prodotto.getIvaperc());
+            s += "\n" + prodotto.toString();
         }
 
         s += "\nTOTALE COMPLESSIVO: " + totale + " EUR";

@@ -6,8 +6,8 @@ public class main {
         Scanner input = new Scanner(System.in);
 
         Prodotto arr[] = new Prodotto[10];
-        for(int i = 0; i < args.length; i++){
-            arr[i] = new Prodotto("Salsiccia", (float)(Math.random() * 3), 22);
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = new Prodotto("Salsiccia", (int)(Math.random() * 3), 22);
         }
 
         try {
