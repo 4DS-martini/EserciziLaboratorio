@@ -1,7 +1,5 @@
 package opereDarteBIS;
 
-import jdk.nashorn.internal.runtime.ECMAException;
-
 public class SculturaDeperibile extends Scultura{
     private double fact; // m^3/gg
     private int etaGG; //giorni

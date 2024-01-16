@@ -1,7 +1,5 @@
 package classe;
 
-import jdk.nashorn.internal.runtime.ECMAException;
-
 import java.lang.String;
 
 public class Studente {
