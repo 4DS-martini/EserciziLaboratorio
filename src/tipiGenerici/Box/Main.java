@@ -1,4 +1,4 @@
-package tipiGenerici;
+package tipiGenerici.Box;
 
 // import static org.junit.jupiter.api.Assertions.assertEquals;
 

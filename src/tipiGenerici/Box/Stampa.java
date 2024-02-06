@@ -1,4 +1,4 @@
-package tipiGenerici;
+package tipiGenerici.Box;
 
 public class Stampa {
     public static <T> String stampaElemento(T elemento)throws Exception {

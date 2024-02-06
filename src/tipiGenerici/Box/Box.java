@@ -1,4 +1,4 @@
-package tipiGenerici;
+package tipiGenerici.Box;
 
 public class Box <T> {
     private T t;
