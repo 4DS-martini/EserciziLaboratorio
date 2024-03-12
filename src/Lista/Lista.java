@@ -41,6 +41,14 @@ public class Lista<T> {
         return lista.toString();
     }
 
+    public void trimToSize(){
+        lista.trimToSize();
+    }
+
+    public void sort(){
+
+    }
+
 
 
 }
