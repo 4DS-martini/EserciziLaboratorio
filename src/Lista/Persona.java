@@ -7,6 +7,11 @@ public class Persona implements Comparable<Persona> {
     private String cognome;
     private Integer eta;
 
+    public Persona(String n){
+        setNome(n);
+        setCognome("");
+        setEta(0);
+    }
     public Persona(String n, String c, Integer e){
         setNome(n);
         setCognome(c);

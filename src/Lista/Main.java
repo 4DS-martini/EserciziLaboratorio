@@ -10,7 +10,7 @@ public class Main {
         Integer len = 10;
         ArrayList<Persona> rubrica = new ArrayList<>(len);
 
-        Persona p1 = new Persona("laura", "sesso", 16);
+        Persona p1 = new Persona("laura", "ciao", 16);
         Persona p2 = new Persona("marco", "muraro", 32);
         Persona p3 = new Persona("bosco", "andrea", 45);
 
